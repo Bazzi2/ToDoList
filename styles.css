@@ -1,0 +1,54 @@
+*, *::after {
+  font-family: 'Source Code Pro', monospace, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background-image: linear-gradient(90deg, rgb(162, 139, 226), rgb(63, 0, 235));
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+  color : rgb(255, 254, 254);
+}
+
+header, form {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+form input, form button {
+  padding:0.5rem;
+  font-size: 2rem;
+  transition: all 350ms ease-in;
+  border: transparent;
+  background: white;
+  border-radius: 3px;
+
+}
+
+form button {
+  color:rgb(255, 254, 254);
+  background: transparent;
+  margin-left: 0.12rem;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: rgb(0, 238, 159);
+  color: #aaa
+}
+
+.todo-container {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  list-style: none;
+}
