@@ -7,26 +7,43 @@ const form = document.querySelectorAll('form');
 
 // Events
 buttonTodo.addEventListener('click', addTodo);
-
+listTodo.addEventListener('click', checkRemoveTodo);
 
 // Functions
 function addTodo(event){
-  let data = inputTodo.value
   event.preventDefault();
-  
-  // 'li' inside list
-  let newTodo = document.createElement('li')
-  newTodo.classList.add('todo-item')  
-  newTodo.innerHTML = data;
-  containerList.appendChild(newTodo);
 
-  let confirm = document.createElement('button')
-  confirm.innerHTML = '<i class(fas fa-check-circle)> <i>'
-  confirm.classList.add('confirm-btn')
-  containerList.appendChild(confirm)
+  let divTodo = document.createElement('div');
+  divTodo.classList.add('todo');
   
-  let trash = document.createElement('button')
-  trash.innerHTML = '<i class(fas fa-trash)> <i>'
-  trash.classList.add('trash-btn')
-  containerList.appendChild(trash)
+  let newTodo = document.createElement('li');
+  newTodo.classList.add('todo-item');
+  newTodo.innerHTML = inputTodo.value;
+  divTodo.appendChild(newTodo);
+
+  let confirmButton = document.createElement('button');
+  confirmButton.innerHTML = '<i class="fas fa-check-circle"> <i>';
+  confirmButton.classList.add('confirm-btn');
+  divTodo.appendChild(confirmButton);
+
+  let trash = document.createElement('button');
+  trash.innerHTML = '<i class="fas fa-trash"> <i>';
+  trash.classList.add('trash-btn');
+  divTodo.appendChild(trash);
+
+  listTodo.appendChild(divTodo);
+  
+  inputTodo.value = "";
+
+ }
+
+function checkRemoveTodo(event) {
+  const item = event.target;
+
+
+  if( item.classList[0] == 'trash-btn' ) {
+    const todo = item.parentElement;
+    todo.remove();
+  }
+
 }

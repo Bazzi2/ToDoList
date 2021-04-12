@@ -1,3 +1,8 @@
+:root{
+  --green: rgb(0, 209, 139);
+  --red: rgb(255, 97, 6);
+}
+
 *, *::after {
   font-family: 'Source Code Pro', monospace, sans-serif;
   margin: 0;
@@ -13,7 +18,7 @@ body {
 
 header {
   font-size: 1.5rem;
-  color : rgb(255, 254, 254);
+  color : white;
 }
 
 header, form {
@@ -27,28 +32,73 @@ header, form {
 form input, form button {
   padding:0.5rem;
   font-size: 2rem;
-  transition: all 350ms ease-in;
+  transition: all 0.3s ease-in;
   border: transparent;
   background: white;
-  border-radius: 3px;
+  
 
 }
 
 form button {
-  color:rgb(255, 254, 254);
+  color:white;
   background: transparent;
   margin-left: 0.12rem;
   cursor: pointer;
 }
 
 form button:hover {
-  background: rgb(0, 238, 159);
+  background: var(--green);
   color: #aaa
 }
 
 .todo-container {
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
+}
+
+.todo-list{
   list-style: none;
+  width: 100%;
+  background: transparent;
+}
+
+.todo{
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  background: white;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.confirmed{
+  background: var(--green);
+  color: white;
+}
+
+.todo-item {
+  flex: 1;
+  padding-left: 0.5rem;
+}
+
+.todo button{
+  border: none;
+  padding: 0.5rem;
+  background: #ddd;
+}
+
+.confirm-btn:hover {
+  background:var(--green);
+  transition:all 0.3s ease-in-out;
+  
+}
+.trash-btn:hover {
+  background: var(--red);
+  transition:all 0.3s ease-in-out;
+}
+
+.fa-trash, .fa-check-circle {
+  pointer-events: none;
 }
