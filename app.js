@@ -39,11 +39,14 @@ function addTodo(event){
 
 function checkRemoveTodo(event) {
   const item = event.target;
-
+  const todo = item.parentElement;
 
   if( item.classList[0] == 'trash-btn' ) {
-    const todo = item.parentElement;
-    todo.remove();
+    todo.classList.add('remove')
+    todo.addEventListener('transitionend', () => todo.remove())
   }
-
+  if ( item.classList[0] == 'confirm-btn' ) {
+    todo.classList.toggle('confirmed');
+    item.classList.toggle('confirmed')
+  }
 }

@@ -73,10 +73,6 @@ form button:hover {
   align-items: center;
 
 }
-.confirmed{
-  background: var(--green);
-  color: white;
-}
 
 .todo-item {
   flex: 1;
@@ -86,19 +82,30 @@ form button:hover {
 .todo button{
   border: none;
   padding: 0.5rem;
-  background: #ddd;
 }
 
-.confirm-btn:hover {
+.confirm-btn {
   background:var(--green);
-  transition:all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
   
 }
-.trash-btn:hover {
+.trash-btn {
   background: var(--red);
-  transition:all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  
 }
 
+.confirmed{
+  transition: all 0.7s ease-in-out;
+  background: var(--green);
+  color: white;
+  font-weight: bold;
+}
+
+.remove {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
 .fa-trash, .fa-check-circle {
   pointer-events: none;
 }
