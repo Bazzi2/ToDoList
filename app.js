@@ -3,11 +3,14 @@ const inputTodo = document.querySelector('.todo-input');
 const containerList = document.querySelector('.todo-container')
 const listTodo = document.querySelector('.todo-list');
 const buttonTodo = document.querySelector('.todo-button');
+const filterTodo = document.querySelector('.todo-filter');
 const form = document.querySelectorAll('form');
+
 
 // Events
 buttonTodo.addEventListener('click', addTodo);
 listTodo.addEventListener('click', checkRemoveTodo);
+filterTodo.addEventListener('click', todoFilter);
 
 // Functions
 function addTodo(event){
@@ -48,4 +51,31 @@ function checkRemoveTodo(event) {
   else if ( item.classList[0] == 'confirm-btn' ) {
     todo.classList.toggle('confirmed');
   }
+}
+
+function todoFilter(event) {
+  const todo = listTodo.childNodes;
+  todo.forEach(todo => {
+    switch(event.target.value) {
+      case "all": 
+        todo.style.display = "flex";
+        break;
+
+        case "completed":
+          if ( todo.classList.contains("confirmed") ) {
+          todo.style.display = "flex";
+          } else {
+            todo.style.display = "none";
+          } 
+          break;
+
+        case "uncompleted":
+          if ( !todo.classList.contains("confirmed") ) {
+            todo.style.display = "flex";
+          } else {
+            todo.style.display = "none";
+          } 
+          break;
+    }
+  })
 }
