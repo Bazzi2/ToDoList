@@ -95,17 +95,19 @@ form button:hover {
   
 }
 
+.remove {
+  transition: all 0.5s ease-in;
+  transform: translateX(10rem) translateY(8rem) rotateZ(20deg);
+  background: var(--red);
+}
+
 .confirmed{
-  transition: all 0.7s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background: var(--green);
   color: white;
   font-weight: bold;
 }
 
-.remove {
-  transform: translateY(8rem) rotateZ(20deg);
-  opacity: 0;
-}
 .fa-trash, .fa-check-circle {
   pointer-events: none;
 }
