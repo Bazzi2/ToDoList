@@ -5,6 +5,7 @@
 - Adding;
 - Removing;
 - Confirm;
+- Filter;
 
 Animated buttons for a better viewing;
 
