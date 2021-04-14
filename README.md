@@ -6,6 +6,7 @@
 - Removing;
 - Confirm;
 - Filter;
+- Save ToDos to Local Storage
 
 Animated buttons for a better viewing;
 
